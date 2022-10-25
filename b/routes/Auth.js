@@ -9,9 +9,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/reg', async function(req, res, next) {
-    const {username,email,password} = req.body;
+    const {name,lastname,email,password} = req.body;
     try{
-        const user= await User.create({username,email,password});
+        const user= await User.create({name,lastname,email,password});
         console.log(user)
         res.status(200).json({
           success:true,
@@ -59,11 +59,36 @@ router.post('/reg', async function(req, res, next) {
     });
     }
   });
-  router.post('/forgot', function(req, res, next) {
-    res.send("for");
+  router.post('/forget', async function(req, res, next) {
+    const {email}= req.body;
+    console.log(email);
+    if(!email ){
+      res.status(400).json({success:false,error:"Please provide email "})
+    }
+    try{
+      const user= await User.findOne({email}).select("+password");
+      if(!user){
+        res.status(404).json({success:false,error:"Invalid Credentials"});
+      }
+      const isMatch = await user.matchPassword(password);
+      if(!isMatch){
+        res.status(404).json({success:false,error:"Invalid password"})
+      }
+   
+      res.status(200).json({
+          success:true,
+          token:user.getSignToken()
+        });    
+    }
+    catch(error)
+    {
+      res.status(400).json({
+        success:false,
+        message:error.message
+    });
+    }
   });
-  
-
+ 
 
   
 module.exports = router;

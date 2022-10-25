@@ -5,7 +5,12 @@ var jwt =require('jsonwebtoken');
 
 
 const UserSchema = new mongoose.Schema({
-    username:{
+    name:{
+        type:String,
+        required:[true,"please provide a username"],
+
+    },
+    lastname:{
         type:String,
         required:[true,"please provide a username"],
 
@@ -46,6 +51,11 @@ UserSchema.methods.getSignToken = function(){
 UserSchema.methods.matchPassword =async function(password)
 {
     return await bcrypt.compare(password,this.password);
+}
+
+UserSchema.method.password = async function(password)
+{
+    return await bcrypt(this.password);
 }
 const User = mongoose.model('User',UserSchema);
 module.exports = User

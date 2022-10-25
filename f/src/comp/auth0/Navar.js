@@ -2,10 +2,10 @@
 
 
 import * as React from 'react';
-import SignIn from '../autho/SignIn';
-import SignUp from '../autho/SignUp';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
 import { Link } from 'react-router-dom';
-import logo from '../img/logo.png';
+import logo from '../../COMMON/img/logo.png';
 
 
 function Navar() {
