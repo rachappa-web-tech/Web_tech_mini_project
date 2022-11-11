@@ -11,7 +11,7 @@ function Navar() {
     return (<nav className='navbar  navbar-primary navbar-expand-sm bg-dark navbar-dark'> 
     <div className='container-fluid' >
         <img src={logo} alt="brand-logo" width={"50px"}  className=" bg-secondry " />
-        <a className='navbar-brand' href='/'><h4>logo</h4></a>
+        <Link className='navbar-brand' to='/'><h4>logo</h4></Link>
 
 
 
@@ -21,19 +21,18 @@ function Navar() {
             <div className='collapse navbar-collapse justify-content-end'  id='cnavbar'>
             <ul className='navbar-nav'>
             < li className='nav-item p-2 ' >
-                <a className='nav-link' href='/'><h4>Home</h4></a>
+                <Link className='nav-link' to='/'><h4>Home</h4></Link>
             </li>
             <li className='nav-item p-2'>
-                <a className='nav-link' href='/calender'><h4>Calender</h4></a>
+                <Link className='nav-link' to='/calender'><h4>Calender</h4></Link>
             </li>
             < li className='nav-item p-2'>
-                <a className='nav-link' href='/Add'><h4>Add</h4></a>
+                <Link className='nav-link' to='/Add'><h4>Add</h4></Link>
             </li>
             <li className='nav-item p-2'>
-                <a className='nav-link' href='/setting'><h4>Setting</h4></a>
+                <Link className='nav-link' to='/setting'><h4>Setting</h4></Link>
             </li>
         </ul>
-
             </div>
        
     </div>

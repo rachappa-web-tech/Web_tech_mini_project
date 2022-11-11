@@ -1,13 +1,27 @@
-import React from 'react'
-import Card1 from './Card1'
+import React, { useEffect, useState } from 'react'
+import Card1 from './Card1';
 
 export default function Calender() {
-  return (
-<>
-<button href='/add'>
-  add reminder
-</button>
-<Card1/><Card1/><Card1/><Card1/><Card1/><Card1/><Card1/><Card1/>
+  const [data,setdata] = useState([]);
+  const fetchData =()=>{
+    return fetch("http://localhost:3001/name")
+    .then((Response)=>Response.json())
+    .then((data)=>setdata(data));
+  }
 
-</>  )
+
+  useEffect(() =>
+  {
+    fetchData();
+  },[])
+return (<>
+<ul>
+{
+  data.map((user,index) =>(
+    <li key ={index} ><Card1 name={user} /></li>
+  ))
 }
+
+</ul>
+
+</> )}

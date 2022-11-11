@@ -3,7 +3,7 @@ import Main_page from './comp/auth0/Main_page';
 import Main_page1 from './comp/auth1/Main_page';
 
 export default function App() {
-  var log =1
+  var log =0
   return (
     <>
     {!log && <Main_page/>
