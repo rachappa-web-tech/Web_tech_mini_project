@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "bootstrap": "^5.2.2"
-  }
+  },
+  "name": "web_tech_mini_project",
+  "description": "Best site to talk to people want to help",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rachappa-web-tech/Web_tech_mini_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rachappa-web-tech/Web_tech_mini_project/issues"
+  },
+  "homepage": "https://github.com/rachappa-web-tech/Web_tech_mini_project#readme"
 }
