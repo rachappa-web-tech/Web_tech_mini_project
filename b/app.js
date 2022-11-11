@@ -10,12 +10,11 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var authRouter = require('./routes/Auth');
+var NameRouter = require('./routes/Name');
 var Data = require("./models/Db");
 var privateRouter = require('./routes/private');
 const { $where } = require('./models/User');
-
 Data();
-
 
 var app = express();
 app.use(cors())
@@ -25,12 +24,14 @@ app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', indexRouter);
+app.use('/name',NameRouter);
 app.use('/users', usersRouter);
 app.use('/auth',authRouter);
 app.use('/pri',privateRouter); 
