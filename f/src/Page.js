@@ -8,6 +8,7 @@ import Fargot from './comp/body/Fargot';
 import Add from './comp/body/Add';
 import Calender from './comp/body/Calender';
 import Setting from './comp/body/Setting';
+import Home from './comp/body/Home';
 
 import Wrong_page from './comp/body/Wrong_page';
 import { GlobalState } from './Global';
@@ -21,7 +22,7 @@ export default function Page() {
  <Routes>
   
    <Route path='/about' exact element={<About/>}/>
-   <Route path='/' exact element={<About/>}/>
+   <Route path='/' exact element={<Home/>}/>
 
    <Route path='/forgot' exact element={<Fargot/>}/>
    <Route path='/SignIn' exact element={isLogged?<Wrong_page/>:<SignIn/>}/>

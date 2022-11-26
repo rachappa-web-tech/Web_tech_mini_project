@@ -12,7 +12,7 @@ function SignIn() {
     const handleSubmit = async e => {
         e.preventDefault()
         try{
-            await  axios.post('http://localhost:3001/user/login',{email,password})
+            await  axios.post('/user/login',{email,password})
             localStorage.setItem('firstLogin',true)
             window.location.href ="/"
 

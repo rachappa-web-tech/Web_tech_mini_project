@@ -14,7 +14,7 @@ const  SignUp= ()=> {
     const handleSubmit = async e => {
         e.preventDefault()
        try {
-        await axios.post('http://localhost:3001/user/register',{name,lastname,email,password})
+        await axios.post('/user/register',{name,lastname,email,password})
         localStorage.setItem('firstLogin',true)
         window.location.href="/";
     } catch (err) {

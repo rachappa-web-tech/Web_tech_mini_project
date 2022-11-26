@@ -12,7 +12,7 @@ export const DataProvider = ({children}) =>{
     if(firstLogin)
     {
         const refreshToken = async ()=> {
-         const res = await axios.get('http://localhost:3001/user/refresh_token')
+         const res = await axios.get('/user/refresh_token')
          console.log(res.data.accesstoken) 
          setToken(res.data.accesstoken)
 
@@ -26,7 +26,7 @@ export const DataProvider = ({children}) =>{
    
    const state = {
     token: [token, setToken],
-    userAPI: UserAPI(token),
+    userAPI: UserAPI(token)
 }
     return (  
     <GlobalState.Provider value={state}>

@@ -10,7 +10,7 @@ function UserAPI(token) {
         if(token){
             const getUser = async () =>{
                 try {
-                        const res =     await axios.get('http://localhost:3001/user/infor', {
+                        const res = await axios.get('/user/infor', {
                         headers: {Authorization: token}
                     })
                      setIsLogged(true)
@@ -20,16 +20,14 @@ function UserAPI(token) {
                     alert(token)
                 } catch (err) {
                     alert("no users")
+                    alert(err.response.data.msg)
                 }
             }
             getUser()
             
         }
     },[token])
-
     
-
-   
     return {
         isLogged: [isLogged, setIsLogged]
     }
