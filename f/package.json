@@ -2,8 +2,7 @@
   "name": "f",
   "version": "0.1.0",
   "private": true,
-  "proxy":"http://localhost:3001",
-
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -11,6 +10,7 @@
     "axios": "^1.2.0",
     "axois": "^0.0.1-security",
     "bootstrap": "^5.2.2",
+    "bootstrap-icons": "^1.10.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",

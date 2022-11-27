@@ -1,4 +1,5 @@
 // @flow strict
+import '../../App.css';
 
 import * as React from 'react';
 import Creator from './Creator';

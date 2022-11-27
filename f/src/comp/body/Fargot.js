@@ -3,6 +3,7 @@
 import * as React from 'react';
 import { BrowserRouter, Link, Route, Router, Routes } from 'react-router-dom';
 import logo from '../../COMMON/img/logo.png';
+import '../../App.css';
 
 function Fargot() {
     return (
@@ -31,7 +32,7 @@ function Fargot() {
                     </form>
              
                     <p >
-                        <Link className='text-white' to={'/signup'} >Create a account</Link>
+                        <Link className=' text-white' to={'/signup'} ><div className='size_button'>Create a account</div></Link>
                     </p>
                     <p></p>
                 </div>

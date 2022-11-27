@@ -12,19 +12,23 @@ import Home from './comp/body/Home';
 
 import Wrong_page from './comp/body/Wrong_page';
 import { GlobalState } from './Global';
+import Home_log from './comp/body/Home_log';
 
 
 
 export default function Page() {
   const state = useContext(GlobalState)
   const [isLogged] = state.userAPI.isLogged
+  const [name] = state.userAPI.name
+  const [email]= state.userAPI.email
+  const [lastname] = state.userAPI.lastname
   return (
  <Routes>
   
    <Route path='/about' exact element={<About/>}/>
-   <Route path='/' exact element={<Home/>}/>
 
    <Route path='/forgot' exact element={<Fargot/>}/>
+   <Route path='/' exact element={isLogged?<Home_log name={name}/>:<Home/>}/>
    <Route path='/SignIn' exact element={isLogged?<Wrong_page/>:<SignIn/>}/>
    <Route path='/SignUp' exact element={isLogged?<Wrong_page/>:<SignUp/>}/>
    <Route path='/add' exact element={isLogged?<Add/>:<Wrong_page/>}/>

@@ -3,23 +3,35 @@ import axios from 'axios'
 
 function UserAPI(token) {
     const [isLogged, setIsLogged] = useState(false)
-
+    const [name,setName] = useState('')
+    const [lastname,setLastname]=useState('')
+    const [phone,setPhone] =useState('')
+    const [email,setEmail]=useState('')
+    const [data,setdata] = useState([])
     useEffect(() =>{
-        alert("UserApi ") 
-        alert(token)
         if(token){
             const getUser = async () =>{
                 try {
                         const res = await axios.get('/user/infor', {
-                        headers: {Authorization: token}
+                        headers: {Authorization: token},
                     })
-                     setIsLogged(true)
-
-                    alert(res)
-                    alert('error in setIslOGGED')
-                    alert(token)
+                    try {
+                        const res1 = await axios.get('/rem/all', {headers: {Authorization: token}})
+                        setdata(res1.data.rem);
                 } catch (err) {
-                    alert("no users")
+                    alert(err.response.data.msg)
+                }
+                    setName(res.data.user.name)
+                    setLastname(res.data.user.lastname)
+                    setPhone(res.data.user.phone)
+                    setEmail(res.data.user.email)
+                    setIsLogged(true)
+             
+
+        
+             
+                } catch (err) {
+                  
                     alert(err.response.data.msg)
                 }
             }
@@ -29,7 +41,12 @@ function UserAPI(token) {
     },[token])
     
     return {
-        isLogged: [isLogged, setIsLogged]
+        isLogged: [isLogged, setIsLogged],
+        name:[name,setName],
+        lastname:[lastname,setLastname],
+        phone:[phone,setPhone],
+        email:[email,setEmail],
+        data:[data,setdata]
     }
 }
 

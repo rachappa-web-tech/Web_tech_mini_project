@@ -6,6 +6,18 @@
   height: 40vmin;
   pointer-events: none;
 }
+.size_my:hover{
+  transform: scale(1.15);
+  color: black;
+  background-color: #e4e6e7;
+  text-decoration-color: rgb(173, 22, 127);
+
+}
+.size_button:hover{
+  transform: scale(1.15);
+}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

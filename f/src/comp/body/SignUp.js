@@ -4,17 +4,21 @@ import { useState } from 'react';
 import { Await, BrowserRouter, Link, Route, Router, Routes } from 'react-router-dom';
 import logo from '../../COMMON/img/logo.png';
 import axios from 'axios';
+import '../../App.css';
+
 
 const  SignUp= ()=> {
     const [name,setName]=useState("")
     const [lastname,setLastname]=useState("")
     const [email,setEmail]=useState("")
+    const [phone,setPhone]=useState("")
+
     const [password,setPassword]=useState("")
 
     const handleSubmit = async e => {
         e.preventDefault()
        try {
-        await axios.post('/user/register',{name,lastname,email,password})
+        await axios.post('/user/register',{name,lastname,phone,email,password})
         localStorage.setItem('firstLogin',true)
         window.location.href="/";
     } catch (err) {
@@ -24,7 +28,7 @@ const  SignUp= ()=> {
     
     return (
 
-            <div className="container-fluid p-5  text-white text-center bg-secondary bg-gradient p-5">
+            <div className="container p-5  text-white text-center bg-primary bg-gradient p-5">
                 <img className='rounded-circle' src={logo} />
                 <div>
                     <form  onSubmit={handleSubmit}  className='row text-center align-center' >
@@ -34,6 +38,11 @@ const  SignUp= ()=> {
                         </div>
                         <div className=' col-sm-12 col-md-4 mb-3 mt-3'>
                             <input  placeholder='enter Lastname' value={lastname} onChange={(e)=>setLastname(e.target.value)}  type="text" className='form-control' id='lastname' />
+                        </div>
+                        <div className="col-md-2"/>
+                        <div className="col-md-2"/>
+                        <div className='col-sm-12 col-md-8 mb-3 mt-3'>
+                            <input placeholder='enter Phone +91' value={phone} onChange={(e)=>setPhone(e.target.value)} type="number" className='form-control' id='phone' />
                         </div>
                         <div className="col-md-2"/>
                         <div className="col-md-2"/>

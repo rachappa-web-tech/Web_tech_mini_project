@@ -10,38 +10,37 @@ import axios from 'axios'
 
 function Navar() {
     const logoutUser = async () =>{
-        await axios.get('/user/logout')
-        
+        await axios.get('/user/logout')  
         localStorage.removeItem('firstLogin')
-        
         window.location.href = "/";
     }
-    return (<nav className='navbar  navbar-primary navbar-expand-sm bg-dark navbar-dark'> 
+    return (
+    <nav className='navbar  navbar-primary navbar-expand-sm bg-dark navbar-dark'> 
     <div className='container-fluid' >
         <img src={logo} alt="brand-logo" width={"50px"}  className=" bg-secondry " />
         <Link className='navbar-brand' to='/'><h4>logo</h4></Link>
 
 
 
-        <button className='navbar-toggler' type='button' data-bs-toggle="collapse" data-bs-target='#cnavbar'>
+        <button className='navbar-toggler' type='button' data-bs-toggle="collapse" data-bs-target='#cnavbar1'>
             <span className='navbar-toggler-icon'></span>
             </button>
-            <div className='collapse navbar-collapse justify-content-end'  id='cnavbar'>
+            <div className='collapse navbar-collapse justify-content-end'  id='cnavbar1'>
             <ul className='navbar-nav'>
             < li className='nav-item p-2 ' >
-                <Link className='nav-link' to='/'><h4>Home</h4></Link>
+                <Link className='nav-link' to='/'><h4 className='size_my'>Home</h4></Link>
             </li>
             <li className='nav-item p-2'>
-                <Link className='nav-link' to='/calender'><h4>Calender</h4></Link>
+                <Link className='nav-link' to='/calender'><h4 className='size_my'>Calender</h4></Link>
             </li>
             < li className='nav-item p-2'>
-                <Link className='nav-link' to='/add'><h4>Add</h4></Link>
+                <Link className='nav-link' to='/add'><h4 className='size_my'>Add</h4></Link>
             </li>
             <li className='nav-item p-2'>
-                <Link className='nav-link' to='/setting'><h4>Setting</h4></Link>
+                <Link className='nav-link' to='/setting'><h4 className='size_my'>Setting</h4></Link>
             </li>
             <li className='nav-item p-2'>
-                <Link className='nav-link' to='/' onClick={logoutUser}><h4>Logout</h4></Link>
+                <Link className='nav-link' to='/' onClick={logoutUser}><h4 className='size_my'>Logout</h4></Link>
             </li>
         </ul>
             </div>

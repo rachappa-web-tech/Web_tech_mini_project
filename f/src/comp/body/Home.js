@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../App.css';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ Students Reminder App
     which send students constant Reminder by email and phone call
 </h6>
         </div>
+        
     </div>
 
     )

@@ -1,70 +1,73 @@
 // @flow strict
 import * as React from 'react';
-import { useState } from 'react';
+import { useState,useContext } from 'react';
+import '../../App.css';
+import axios from 'axios';
+import { GlobalState } from '../../Global';
+
 import { BrowserRouter, Link, Route, Router, Routes } from 'react-router-dom';
 import logo from '../../COMMON/img/logo.png';
 
 export default function Add() {
-  
+    const state = useContext(GlobalState)
+    const [token] = state.token
+    const [header,setHeader]=useState("")
+    const [about,setAbout]=useState("")
+    const [date,setDatae] = useState("")
+    const [time,setTime] = useState("")
 
-
-    const [name,setName]=useState("")
-    const [lastname,setLastname]=useState("")
-    const [email,setEmail]=useState("")
-    const [password,setPassword]=useState("")
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async e => {
         e.preventDefault();
-        fetch('http://localhost:3001/auth/reg', {
-           method: 'POST',
-           body: JSON.stringify({
-            name,lastname,email,password
-        }),
-           headers: {
-              'Content-type': 'application/json',
-           },
-        }).then((res)=>res.json())
-        .then((data)=>{
-            console.log(data);
-        })
-        .catch((err) =>{
-            console.log(err.message)
-        });
+        try {
+            alert(time);
+            alert(date);
+            await axios.post('/rem/add',{header,about,date,time},{   headers: {Authorization: token}})
+            window.location.href="/";
+        } catch (err) {
+            alert(err.response.data.msg)
+           }
      };
     
     return (
 
-            <div className="container-fluid p-5  text-white text-center bg-secondary bg-gradient p-5">
+            <div className="container-fluid p-5  text-white text-center bg-primary bg-gradient p-5">
                 <img className='rounded-circle' src={logo} />
                 <div>
                     <form  onSubmit={handleSubmit}  className='row text-center align-center' >
-                    <div className="col-md-2"/>
-                        <div className='col-sm-12 col-md-4 mb-3 mt-3 '>
-                             <input  placeholder='enter NAME' value={name} onChange={(e)=>setName(e.target.value)} type="text" className='form-control' id='Name' />
-                        </div>
-                        <div className=' col-sm-12 col-md-4 mb-3 mt-3'>
-                            <input  placeholder='enter Lastname' value={lastname} onChange={(e)=>setLastname(e.target.value)}  type="text" className='form-control' id='lastname' />
-                        </div>
-                        <div className="col-md-2"/>
+                    
+                       
                         <div className="col-md-2"/>
                         <div className='col-sm-12 col-md-8 mb-3 mt-3'>
-                            <input placeholder='enter Email' value={email} onChange={(e)=>setEmail(e.target.value)} type="email" className='form-control' id='email' />
+                            <input placeholder='Enter Header' value={header} onChange={(e)=>setHeader(e.target.value)} type="text" className='form-control' id='header' />
                         </div>
                         <div className="col-md-2"/>
                         <div className="col-md-2"/>
 
                         <div className='col-sm-12 col-md-8 mb-3 mt-3'>
-                            <input  type="password" placeholder='password' value={password} onChange={(e)=>setPassword(e.target.value)} className='form-control' id='password' />
+                            <input  type="text" placeholder='About Reminder' value={about} onChange={(e)=>setAbout(e.target.value)} className='form-control' id='about' />
                         </div>
                         <div className="col-md-2"/>
+                         
+                        <div className="col-md-2"/>
+                        <div className='col-sm-12 col-md-8 mb-3 mt-3'>
+                        <input  type="date" placeholder='ADD date' value={date} onChange={(e)=>setDatae(e.target.value)} className='form-control' id='date' />
+
+                        </div>
+                        <div className="col-md-2"/>
+                        <div className="col-md-2"/>
+                        <div className='col-sm-12 col-md-8 mb-3 mt-3'>
+                        <input  type="time" placeholder='ADD time' value={time} onChange={(e)=>setTime(e.target.value)} className='form-control' id='time' />
+                        </div>
+                        <div className="col-md-2"/>
+
 
                             <button   type='submit'  className='container col-sm-12 col-md-7 mb-3 mt-3 bg-success' >
-                                Log In
+                           <div className='size_button'>Add Reminder</div>
                             </button>
 
                     </form>
                     <p >
-                        <Link className='text-white' to={'/signin'} >I already have an account</Link>
+                        <Link className=' text-white' to={'/'} > <div className='size_button'>Don't mind</div></Link>
                     </p>
                     <p></p>
                 </div>
