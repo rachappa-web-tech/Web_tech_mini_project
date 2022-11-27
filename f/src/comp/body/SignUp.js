@@ -28,7 +28,7 @@ const  SignUp= ()=> {
     
     return (
 
-            <div className="container p-5  text-white text-center bg-primary bg-gradient p-5">
+            <div className="container p-5 border border-3 rounded  text-white text-center bg-primary bg-gradient p-5">
                 <img className='rounded-circle' src={logo} />
                 <div>
                     <form  onSubmit={handleSubmit}  className='row text-center align-center' >

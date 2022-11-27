@@ -27,7 +27,7 @@ function SignIn() {
     }
     
     return (
-            <div className="bg-primary container text-white text-center">
+            <div className="bg-primary container  border border-3 rounded text-white text-center">
                 <img className='rounded-circle' src={logo} />
                 <div>
                     <form onSubmit={handleSubmit}  className='row'>

@@ -19,8 +19,7 @@ export default function Add() {
     const handleSubmit = async e => {
         e.preventDefault();
         try {
-            alert(time);
-            alert(date);
+            alert(header+"  " +"added")
             await axios.post('/rem/add',{header,about,date,time},{   headers: {Authorization: token}})
             window.location.href="/";
         } catch (err) {

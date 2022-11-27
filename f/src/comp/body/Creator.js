@@ -3,7 +3,7 @@ import '../../App.css';
 
 export default function Creator(props) {
   return (
- <div className='container-fluid text-white  bg-primary' >
+ <div className='container-fluid border-2 rounded-pill border border-dark text-white  bg-primary' >
   <h1>
     {props.name}
   </h1>

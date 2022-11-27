@@ -3,18 +3,20 @@ import '../../App.css';
 
 export default function Home() {
   return (
-    <div>
+    <div className='p-2 border border-2'>
 
 
-        <div className='container-fluid bg-primary '>
+        <div className='border border-3  rounded border-info container-fluid bg-primary '>
 <h1 className='text-white'>This is home page</h1>
 <h2 className='text-dark'>
 Students Reminder App
 </h2>
-<h6 className='text-white'>
-    Our site is constant Reminder app 
-    which send students constant Reminder by email and phone call
-</h6>
+<h5 className='text-white'>
+    Our site is  Reminder app 
+    which send students need to have a Reminder list 
+    and alsow reading all mails  is diffuclt so we put send html templet mail 
+    automatically ,before 24 hours of that incendents 
+</h5>
         </div>
         
     </div>

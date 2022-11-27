@@ -13,8 +13,34 @@
   text-decoration-color: rgb(173, 22, 127);
 
 }
+table{
+  table-layout: fixed;
+}
+table, th, td {
+  border: 2px solid black;
+  
+  
+
+}
+th{
+  text-align: right;
+}
+td{
+  text-align:start;
+  margin-right: 5px;
+  overflow-wrap: break-word;
+}
 .size_button:hover{
   transform: scale(1.15);
+}
+td:hover{
+  transform:scale(1.01);
+  background-color: aliceblue;
+  text-align: center;
+  
+}
+tr:nth-child(even) {
+  background-color: #75d7d7;
 }
 
 
