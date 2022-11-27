@@ -12,7 +12,7 @@ function Navar() {
     <nav className='navbar  navbar-expand-sm bg-dark navbar-dark'> 
     <div className='container-fluid' >
         <img src={logo} alt="brand-logo" width={"50px"}  className=" bg-secondry " />
-        <Link to='/' className='navbar-brand'><h4>logo</h4></Link>
+        <Link to='/' className='navbar-brand'><h4>Reminder</h4></Link>
 
 
 

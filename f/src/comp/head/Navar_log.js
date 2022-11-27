@@ -18,7 +18,7 @@ function Navar() {
     <nav className='navbar  navbar-primary navbar-expand-sm bg-dark navbar-dark'> 
     <div className='container-fluid' >
         <img src={logo} alt="brand-logo" width={"50px"}  className=" bg-secondry " />
-        <Link className='navbar-brand' to='/'><h4>logo</h4></Link>
+        <Link className='navbar-brand' to='/'><h4>Reminder</h4></Link>
 
 
 
