@@ -46,6 +46,7 @@ function UserAPI(token) {
         lastname:[lastname,setLastname],
         phone:[phone,setPhone],
         email:[email,setEmail],
+       
         data:[data,setdata]
     }
 }
